@@ -14,9 +14,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": " next build && yarn postbuild",
-    "build:static": "cross-env NEXT_BUILD_ENV_OUTPUT='export' next build && yarn postbuild",
+    "build": "next build && yarn postbuild",
     "postbuild": "next-sitemap && pagefind --site .next/server/app --output-path public/_pagefind",
+    "build:ghpage": "cross-env NEXT_BUILD_ENV_OUTPUT='export' next build && yarn postbuild:ghpage",
+    "postbuild:ghpage": "next-sitemap && pagefind --site .next/server/app --output-path out/_pagefind",
     "dev": "next dev -p 3000 -H 0.0.0.0",
     "fix-all-files": "eslint . --fix",
     "g:lint-staged-files": "lint-staged --allow-empty",
