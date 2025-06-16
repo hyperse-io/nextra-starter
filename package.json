@@ -2,6 +2,7 @@
   "name": "@hyperse/nextra-starter",
   "version": "0.0.1",
   "description": "Hyperse Nextra Starter",
+  "private": true,
   "homepage": "https://github.com/hyperse-io/nextra-starter#readme",
   "bugs": {
     "url": "https://github.com/hyperse-io/nextra-starter/issues"
