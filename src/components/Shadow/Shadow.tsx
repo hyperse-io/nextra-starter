@@ -2,7 +2,7 @@
 
 // https://gist.github.com/janily/04d7fb0861e053d4679b38743ffc05a7
 import type { ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { startTransition, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export const Shadow = ({
@@ -21,7 +21,9 @@ export const Shadow = ({
 
     try {
       const root = nodeRef.current.attachShadow({ mode });
-      setShadowRoot(root);
+      startTransition(() => {
+        setShadowRoot(root);
+      });
     } catch (error) {
       console.warn('Failed to attach shadow root:', error);
     }
